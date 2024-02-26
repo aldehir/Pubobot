@@ -874,7 +874,6 @@ class Channel:
         # console.display("DEBUG| active_pickups: {0}".format(str([i.name for i in active_pickups])))
         # console.display("DEBUG| allowoffline: {0}".format(str([i.name for i in allowoffline])))
         pickup.players = []
-        self.update_topic()
         Match(pickup, players)
         self.lastgame_pickup = pickup
 

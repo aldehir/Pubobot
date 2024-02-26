@@ -169,9 +169,6 @@ async def test_require_ready_auto_backfill(pbot, pickup):
             assert isinstance(msg.channel, discord.DMChannel)
             assert msg.channel.recipient.id == player.id
 
-    async with pbot.message() as msg:
-        assert "[**no pickups**]" in msg.content
-
     # Should get a new ready message for updated players
     async with pbot.message() as msg:
         assert (match := simple_match("!spawn_message {match_id}", msg.content))
@@ -210,9 +207,6 @@ async def test_require_ready_auto_backfill(pbot, pickup):
             assert isinstance(msg.channel, discord.DMChannel)
             assert msg.channel.recipient.id == player.id
 
-    async with pbot.message() as msg:
-        assert "[**no pickups**]" in msg.content
-
     # Should get a new ready message for updated players
     async with pbot.message() as msg:
         assert simple_match("!spawn_message {match_id}", msg.content)
@@ -247,9 +241,6 @@ async def test_require_ready_auto_backfill(pbot, pickup):
         async with pbot.message() as msg:
             assert isinstance(msg.channel, discord.DMChannel)
             assert msg.channel.recipient.id == player.id
-
-    async with pbot.message() as msg:
-        assert "[**no pickups**]" in msg.content
 
     # Should get a new ready message for updated players
     async with pbot.message() as msg:

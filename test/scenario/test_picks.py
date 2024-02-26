@@ -37,9 +37,6 @@ async def test_multi_pick(pbot, pickup):
             assert isinstance(msg.channel, discord.DMChannel)
             assert msg.channel.recipient.id == player.id
 
-    async with pbot.message() as msg:
-        assert "[**no pickups**]" in msg.content
-
     matcher = PickStageMatcher()
 
     async with pbot.message() as msg:
